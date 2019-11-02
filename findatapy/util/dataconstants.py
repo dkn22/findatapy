@@ -28,6 +28,8 @@ def key_store(service_name):
     if key is None:
         key = input("Please enter the %s API key: " % service_name)
 
+    keyring.set_password(service_name, os.getlogin(), key)
+
     return key
 
 

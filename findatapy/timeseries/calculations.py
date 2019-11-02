@@ -155,7 +155,7 @@ class Calculations(object):
             # trade_returns.ix[val, col_name] = col[val]
 
             date_indices = trade_returns.index.searchsorted(col.index)
-            trade_returns.ix[date_indices, col_name] = col
+            trade_returns.loc[date_indices, col_name] = col
 
         return trade_returns
 
